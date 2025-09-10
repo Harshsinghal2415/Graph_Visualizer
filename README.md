@@ -3,7 +3,7 @@
 
 ## Draw your own graphs and visualize the most common graph algorithms
 
-This web application allows you to draw a graph from zero, with possibility of directed and weighted edges, and visualize different algorithms for graphs known in CS.
+This allows you to draw a graph from zero, with possibility of directed and weighted edges, and visualize different algorithms for graphs known in CS.
 
 ## Features
 - Draw a graph, with undirected/directed and unweighted/weighted edges
