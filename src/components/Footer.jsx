@@ -5,7 +5,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 export default function Footer() {
   return (
     <div className='footer'>
-      <p>© 2025 Shiva Singhal</p>
+      <p>© 2024 Shiva Singhal</p>
       <LinkedInIcon onClick={() => window.open('www.linkedin.com/in/shiva-singhal-b89202227')} />
       <GitHubIcon onClick={() => window.open('https://github.com/Harshsinghal2415')} />
     </div>
