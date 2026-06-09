@@ -43,8 +43,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "gh-pages": "^3.2.0"
   },
   "engines": {
     "node": "24.x"
