@@ -3,7 +3,6 @@ import React from 'react';
 export default function Edge({ id, edge, position, isWeighted, isDirected, isCurved, highlight }) {
   const weight = edge.w;
   const alfa = (Math.atan2(position.y2 - position.y1, position.x2 - position.x1) * 180) / Math.PI;
-  // The Math. atan2() method returns a numeric value between -π and π representing the angle theta of an (x, y) point
   const length = Math.sqrt((position.x1 - position.x2) ** 2 + (position.y1 - position.y2) ** 2);
   const centerX = (position.x1 + position.x2) / 2;
   const centerY = 5 + (position.y1 + position.y2) / 2;
@@ -41,14 +40,14 @@ export default function Edge({ id, edge, position, isWeighted, isDirected, isCur
   }
   return (
     <g>
-      {/* Straight lines-when single edge is drawn*/}
+      {/* Straight lines */}
       {!isCurved && (
         <>
           <line x1={position.x1} y1={position.y1} x2={position.x2} y2={position.y2} stroke='rgba(0,0,0,0)' strokeWidth='15px' />
           <line x1={position.x1} y1={position.y1} x2={position.x2} y2={position.y2} stroke={color()} strokeWidth='4px' />
         </>
       )}
-      {/* Curved lines -when double edges to a node is drawn */ }
+      {/* Curved lines  */}
       {isCurved && (
         <>
           <path
@@ -65,22 +64,21 @@ export default function Edge({ id, edge, position, isWeighted, isDirected, isCur
           />
         </>
       )}
-
       {isWeighted && (
         <text
           x={textPosX}
           y={textPosY}
           className='unselectable'
           fill='black'
-          transform={`rotate(${rotateTextAngle} ${textPosX} ${textPosY})
+          transform={`rotate(${rotateTextAngle} ${textPosX} ${textPosY}) 
           translate(${translateTextDistance} ${liftDistance})`}
         >
           {weight}
         </text>
       )}
-      { isDirected && (
+      {isDirected && (
         <path
-          d={`M ${position.x2} ${position.y2} L ${position.x2 + 6} ${position.y2 + 20}
+          d={`M ${position.x2} ${position.y2} L ${position.x2 + 6} ${position.y2 + 20} 
           L ${position.x2 - 6} ${position.y2 + 20} Z`}
           transform={`rotate(${(isCurved ? angle : alfa) + 90} ${position.x2} ${position.y2}) translate(0 18)`}
           fill={color()}
@@ -88,14 +86,4 @@ export default function Edge({ id, edge, position, isWeighted, isDirected, isCur
       )}
     </g>
   );
-}
-{
-//   We use this shorthand by placing a React element as condition 2, getting...
-//
-// (condition1 && <ReactElement />)
-// which is effectively...
-//
-// if(condition1) {
-//     <ReactElement />
-// }
 }

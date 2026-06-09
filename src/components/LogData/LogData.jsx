@@ -13,4 +13,3 @@ export default function LogData({ logdata }) {
     </div>
   );
 }
-//printing algorithm steps

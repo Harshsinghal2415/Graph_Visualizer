@@ -5,9 +5,9 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 export default function Footer() {
   return (
     <div className='footer'>
-      <p>© 2024 Shiva Singhal</p>
-      <LinkedInIcon onClick={() => window.open('www.linkedin.com/in/shiva-singhal-b89202227')} />
-      <GitHubIcon onClick={() => window.open('https://github.com/Harshsinghal2415')} />
+      <p>© 2021 Gonzalo Pereira</p>
+      <LinkedInIcon onClick={() => window.open('https://www.linkedin.com/in/gonzalo-pereira-ramirez-8818a5195/')} />
+      <GitHubIcon onClick={() => window.open('https://github.com/GonzaloPereira/graph-visualizer')} />
     </div>
   );
 }

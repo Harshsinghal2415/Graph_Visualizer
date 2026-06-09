@@ -4,12 +4,12 @@ import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import SpeedIcon from '@material-ui/icons/Speed';
 
-const useStyles = makeStyles({//styling using javascript
+const useStyles = makeStyles({
   root: {
     width: 300,
   },
 });
-const MySlider = withStyles({//This is a higher-order function that returns a higher-order component used to wrap React components to add styles using the theme. We use this to make themed styles easier to work with.
+const MySlider = withStyles({
   root: {
     color: '#3f72af',
     height: 8,
@@ -45,15 +45,14 @@ export default function SpeedSlider({ speed, setSpeed }) {
   const handleChange = (event, newValue) => {
     setSpeed(newValue);
   };
-
   return (
-    <div className={classes.root }>
+    <div className={classes.root}>
       <Grid container spacing={2} alignItems='center'>
         <Grid item>
           <p style={{ marginTop: '0.7rem' }}>Speed</p>
         </Grid>
         <Grid item xs>
-          <MySlider value={speed} onChange={handleChange} aria-labelledby='continuous-slider' min={0} max={900} step={1} />
+          <MySlider value={speed} onChange={handleChange} aria-labelledby='continuous-slider' min={200} max={900} step={1} />
         </Grid>
         <Grid item>
           <SpeedIcon />

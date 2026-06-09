@@ -3,6 +3,7 @@ import NodeDrawn from './NodeDrawn';
 import EdgeDrawn from './EdgeDrawn';
 import EditWeight from './EditWeight';
 import Instructions from './Instructions';
+import ExportImport from './ExportImport';
 import BackButton from './Buttons/BackButton';
 import FinishButton from './Buttons/FinishButton';
 import WeightedEdgesToggle from './Buttons/WeightedEdgesToggle';
@@ -180,7 +181,6 @@ export default function DrawGraph({ close, sendGraph, currentGraph }) {
     return ret;
   }
   function findEdge(u, v) {
-
     return Object.values(graphData.edges).find((edge) => edge.u === u && edge.v === v);
   }
 
@@ -271,7 +271,7 @@ export default function DrawGraph({ close, sendGraph, currentGraph }) {
         {showEditWeight && graphData.isWeighted && (
           <EditWeight currentEdge={currentEdge} setCurrentEdge={setCurrentEdge} handleSubmit={editWeight} />
         )}
-
+        <ExportImport graphData={graphData} setGraph={setGraph} />
         <BackButton close={close} />
         <WeightedEdgesToggle
           isWeighted={graphData.isWeighted}

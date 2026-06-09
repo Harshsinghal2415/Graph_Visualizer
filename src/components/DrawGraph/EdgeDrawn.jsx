@@ -69,7 +69,7 @@ export default function EdgeDrawn({ id, edge, position, currentEdge, handleClick
           y={textPosY}
           className='unselectable'
           fill={currentEdge && currentEdge.id === id ? '#3F72AF' : 'black'}
-          transform={`rotate(${rotateTextAngle} ${textPosX} ${textPosY})
+          transform={`rotate(${rotateTextAngle} ${textPosX} ${textPosY}) 
           translate(${translateTextDistance} ${liftDistance})`}
         >
           {weight}
@@ -77,7 +77,7 @@ export default function EdgeDrawn({ id, edge, position, currentEdge, handleClick
       )}
       {isDirected && (
         <path
-          d={`M ${position.x2} ${position.y2} L ${position.x2 + 6} ${position.y2 + 20}
+          d={`M ${position.x2} ${position.y2} L ${position.x2 + 6} ${position.y2 + 20} 
           L ${position.x2 - 6} ${position.y2 + 20} Z`}
           transform={`rotate(${(isCurved ? angle : alfa) + 90} ${position.x2} ${position.y2}) translate(0 18)`}
           fill={currentEdge && currentEdge === id ? '#3F72AF' : 'black'}

@@ -18,4 +18,3 @@ export default function NodeDrawn({ position, id, currentNode, handleClick, isDr
     </g>
   );
 }
-//done

@@ -9,4 +9,3 @@ export default function Reproductor({ speed, setSpeed }) {
     </div>
   );
 }
-//this file is for controlling the speed of the algorithm that is running

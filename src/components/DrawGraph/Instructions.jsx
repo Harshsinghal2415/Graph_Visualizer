@@ -13,4 +13,3 @@ export default function Instructions() {
     </ul>
   );
 }
-// done

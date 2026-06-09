@@ -9,7 +9,6 @@ export default function Menu({ setCurrentAlgorithm }) {
     ['Minimum Spanning Trees', ['Kruskal', 'Prim']],
   ];
   return (
-
     <div className='menu'>
       <h2>Algorithms</h2>
       {/* Elementary Graph Algorithms */}

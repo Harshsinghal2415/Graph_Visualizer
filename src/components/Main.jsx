@@ -1,6 +1,6 @@
 import React, { useState, useReducer, useRef, useEffect, useCallback } from 'react';
 import DrawGraph from './DrawGraph/DrawGraph';
-// import SelectGraph from './SelectGraph/SelectGraph';
+import SelectGraph from './SelectGraph/SelectGraph';
 import Node from './Canvas/Node';
 import Edge from './Canvas/Edge';
 import Menu from './Menu/Menu';
@@ -27,7 +27,7 @@ function vizDataReducer(state, event) {
 
 export default function Main() {
   const [showDrawGraph, setShowDrawGraph] = useState(false);
-  // const [showSelectGraph, setShowSelectGraph] = useState(false);
+  const [showSelectGraph, setShowSelectGraph] = useState(false);
   const blankGraph = useRef({ topNode: 0, topEdge: 0, isWeighted: false, isDirected: false, nodes: {}, edges: {} });
   const [graphData, setGraphData] = useState(blankGraph.current);
 
@@ -105,7 +105,7 @@ export default function Main() {
       <main>
         <Header
           setShowDrawGraph={setShowDrawGraph}
-          // setShowSelectGraph={setShowSelectGraph}
+          setShowSelectGraph={setShowSelectGraph}
           setOpenError={setOpenError}
           setError={setError}
           isPlaying={isPlaying}
@@ -165,7 +165,15 @@ export default function Main() {
         <Footer />
         <SnackbarAlert openError={openError} setOpenError={setOpenError} error={error} />
       </main>
-
+      {showSelectGraph && (
+        <SelectGraph
+          sendGraph={setGraphData}
+          close={() => {
+            setShowSelectGraph(false);
+            resetViz();
+          }}
+        />
+      )}
       {showDrawGraph && (
         <DrawGraph
           currentGraph={graphData}

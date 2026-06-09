@@ -16,8 +16,8 @@ export default function SubMenu({ title, list, setCurrentAlgorithm }) {
             <div key={id} className='submenu-item'>
               <h4
                 onClick={(e) => {
-                  e.stopPropagation();//to stop the toggle of drop down menu
-                  setCurrentAlgorithm(item);//accessing the algorith that is clicked
+                  e.stopPropagation();
+                  setCurrentAlgorithm(item);
                 }}
               >
                 {item}

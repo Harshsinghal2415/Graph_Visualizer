@@ -28,13 +28,13 @@ export async function Bfs(graphData, source, vizNode, vizEdge, setFocusCodeLine,
   //Visualization
   setTag(source, 0);
   printLog(`Minimum distance from ${source} to ${source} ->  D[${source}] = ${D[source]}`);
-  setFocusCodeLine(4);//highlighting the line in pseudocode running beside canvas
+  setFocusCodeLine(4);
   await delay(delayTime);
 
   while (Q.length > 0) {
     const u = Q[0];
     Q.shift();
-    // The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array
+
     // Visualization
     vizNode(u, 'yellow');
     setFocusCodeLine(6);
@@ -56,11 +56,10 @@ export async function Bfs(graphData, source, vizNode, vizEdge, setFocusCodeLine,
         vizNode(v, 'blue');
         setFocusCodeLine(9);
         await delay(delayTime);
-        // setFocusCodeLine();
+        setFocusCodeLine();
         await delay(delayTime / 5);
       } else {
         // Visualization
-
         vizEdge(u, v, 'red', isDirected);
         setFocusCodeLine();
         await delay(delayTime);

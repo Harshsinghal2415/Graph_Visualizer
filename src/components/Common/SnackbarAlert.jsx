@@ -14,7 +14,7 @@ export default function SnackbarAlert({ openError, setOpenError, error }) {
   return (
     <Snackbar open={openError} autoHideDuration={3000} onClose={closeSnackbar}>
       <Alert onClose={closeSnackbar} severity='error'>
-      {error}
+        {error}
       </Alert>
     </Snackbar>
   );
