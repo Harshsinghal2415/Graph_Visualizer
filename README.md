@@ -1,4 +1,4 @@
-# Graph Visualizer 
+# Graph Visualizer [![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen)](https://graph-visualizer-git-master-harshsinghal2415-1093s-projects.vercel.app/)
 
 
 ## Draw your own graphs and visualize the most common graph algorithms
